@@ -1,0 +1,40 @@
+{% extends 'placement/base.html' %}
+
+{% block content %}
+<div class="card p-4">
+    <h3 class="text-center text-primary mb-4">
+        Registered Companies
+    </h3>
+
+    {% if companies %}
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover align-middle text-center">
+                <thead class="table-primary">
+                    <tr>
+                        <th>#</th>
+                        <th>Company Name</th>
+                        <th>Location</th>
+                        <th>Job Role</th>
+                        <th>Package (CTC)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for company in companies %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ company.name }}</td>
+                            <td>{{ company.location }}</td>
+                            <td>{{ company.job_role }}</td>
+                            <td>{{ company.package }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <p class="text-center text-danger fw-bold">
+            No companies added yet.
+        </p>
+    {% endif %}
+</div>
+{% endblock %}

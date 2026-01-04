@@ -1,0 +1,167 @@
+{% extends 'placement/base.html' %}
+
+{% block title %}Home | Campus Placement{% endblock %}
+
+{% block content %}
+
+<style>
+    .hero {
+        height: 100vh;
+        background: linear-gradient(120deg, #1e3c72, #2a5298);
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-box {
+        max-width: 700px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 40px;
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        color: #e0e0e0;
+    }
+
+    .hero-buttons a {
+        display: inline-block;
+        margin: 10px;
+        padding: 12px 25px;
+        border-radius: 30px;
+        font-size: 16px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .btn-primary {
+        background: #00c6ff;
+        color: #000;
+    }
+
+    .btn-primary:hover {
+        background: #00a2d6;
+        color: white;
+    }
+
+    .btn-secondary {
+        background: transparent;
+        border: 2px solid #fff;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background: white;
+        color: #2a5298;
+    }
+
+    .features {
+        background: #ffffff;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .features h2 {
+        margin-bottom: 40px;
+        font-size: 32px;
+        color: #333;
+    }
+
+    .feature-box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .card {
+        background: #f4f6f9;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+    }
+
+    .card h3 {
+        margin-bottom: 10px;
+        color: #2a5298;
+    }
+
+    .card p {
+        font-size: 14px;
+        color: #555;
+    }
+
+    footer {
+        background: #1e3c72;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+    }
+</style>
+
+<div class="hero">
+    <div class="hero-box">
+        <h1>Campus Placement Management System</h1>
+        <p>
+            A smart platform to manage students, companies, eligibility
+            and placement activities efficiently.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'register_student' %}" class="btn-primary">Register Student</a>
+            <a href="{% url 'add_company' %}" class="btn-secondary">Add Company</a>
+            <a href="{% url 'dashboard' %}" class="btn-secondary">Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<div class="features">
+    <h2>Why Use This System?</h2>
+
+    <div class="feature-box">
+        <div class="card">
+            <h3>Student Management</h3>
+            <p>Store student details, CGPA, department, photo and eligibility.</p>
+        </div>
+
+        <div class="card">
+            <h3>Company Details</h3>
+            <p>Manage job role, location, package and eligibility criteria.</p>
+        </div>
+
+        <div class="card">
+            <h3>Eligibility Check</h3>
+            <p>Automatically find eligible students based on CGPA.</p>
+        </div>
+
+        <div class="card">
+            <h3>Dashboard</h3>
+            <p>Quick overview of students, companies and placements.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    © 2025 Campus Placement System | Developed by LUFFY
+</footer>
+
+{% endblock %}
